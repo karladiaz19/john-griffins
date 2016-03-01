@@ -1,16 +1,18 @@
 require_relative 'config/environment'
-require_relative 'models/textanalyzer.rb'
 
-class App < Sinatra::Base
+class app < Sinatra::Base 
 
-get '/' do
-  erb :index
+  get '/' do
+   erb :dashboard
+  end 
+  
 end
 
 post '/' do
-  @analyzed_text = TextAnalyzer.new(params[:user_text])
-  erb :results
-end
-
+  @user = {
+   name: "#{params["fname"]} #{params["lname"]}" 
+    }
+ erb:dashboard
+ end
 
 end
