@@ -1,4 +1,4 @@
-p  require_relative 'config/environment'
+ require_relative 'config/environment'
 
 class App < Sinatra::Base 
 
@@ -9,7 +9,13 @@ class App < Sinatra::Base
 post '/' do
   @user = {
    name: "#{params["fname"]} #{params["lname"]}",
-   profilepic: "#{params["propic"]}"
+   profilepic: "#{params["propic"]}",
+   email: "#{params["email"]}",
+   status: "#{params["status"]}",
+   birthday: "#{params["bday"]}",
+   age: "#{params["age"]}",
+   favcolor: "#{params["favcr"]}",
+   username: "#{params["username"]}",
     }
   
  erb :dashboard
